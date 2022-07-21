@@ -16,7 +16,8 @@ npm install
 npm install -g typescript
 ```
 ```ts
-Create index.js file 
+//Create index.js file 
+
 import Blynk from 'blynk'
 // in JavaScript
 // const { Blynk } = require('blynk')
