@@ -10,6 +10,12 @@
 
 ## Usage
 ```ts
+npm install
+```
+```ts
+npm install -g typescript
+```
+```ts
 import Blynk from 'blynk'
 // in JavaScript
 // const { Blynk } = require('blynk')
