@@ -11,6 +11,7 @@
 ## Usage
 ```ts
 npm install -g
+npx tsc
 ```
 ```ts
 //Typescript Package
