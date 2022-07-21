@@ -10,10 +10,22 @@
 
 ## Usage
 ```ts
-npm install
+npm install -g
 ```
 ```ts
 npm install -g typescript
+or
+npm install typescript
+```
+```ts
+npm install -g express
+or
+npm install express
+```
+```ts
+npm install -g blynk
+or
+npm install blynk
 ```
 ```ts
 //Create index.js file 
