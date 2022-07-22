@@ -21,7 +21,8 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsc --build --force"
+    "build": "tsc --build --force",
+    "start": "nodemon server.js"
   },
   "files": [
     "dist/**/*"
