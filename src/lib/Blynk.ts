@@ -21,6 +21,13 @@ class Blynk extends Protocol {
     return this.sendCommand(Command.GET_ENERGY)
   }
 
+  createDash(dashId: string, dashName: string, ): Promise<BlynkResponse> {
+    let dashJson = '{\"id\":' + dashId + ', \"name\":\" ' + dashName + ' \"}'
+    let boardJson = '{\"id\":' + dashId + ', \"name\": \"Arduino Uno\", \"boardType\": \"Arduino UNO\", \"connectionType\": \"WI_FI\"}'
+    this.sendCommand(Command.CREATE_DASH, dashJson)
+    return this.sendCommand(Command.CREATE_DEVICE, [dashId, boardJson])
+  }
+
   async getDevices(dashId: string) {
     return this.sendCommand(Command.GET_DEVICES, dashId)
       .then((r) => JSON.parse(r))

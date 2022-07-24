@@ -2,7 +2,7 @@ var express = require('express')
 var app = express()
 
 /* Blynk Config */
-var blynk_2 = require("blynk");
+var blynk_2 = require('./dist/lib/Blynk');
 var blynk_1 = new blynk_2['default']('54.251.129.244', 9443);
 
 /* Route (url) */
@@ -31,6 +31,22 @@ app.get('/profile', function(req, res) {
 
 app.get('/logout', function(req, res){
     blynk_1.disconnect();
+    res.send("success");
+})
+
+
+app.get('/createDash/:dashId/:dashName', function(req, res) {
+    let createDashboard = blynk_1.createDash(req.params.dashId, req.params.dashName);
+    createDashboard.then(function(result) {
+        res.send(result + "");
+    })
+})
+
+app.get('/createDevice', function(req, res) {
+    let createDevice = blynk_1.createDevice();
+    createDevice.then(function(result) {
+        res.send(result + "");
+    })
 })
 
 /* Listen Port */
