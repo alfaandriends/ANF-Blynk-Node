@@ -3,8 +3,8 @@ var app = express()
 
 /* Blynk Config */
 var blynk_2 = require('./dist/lib/Blynk');
-// var blynk_1 = new blynk_2['default']('alfaandfriends.tplinkdns.com', 9443);
-var blynk_1 = new blynk_2['default']('192.168.1.183', 9443);
+var blynk_1 = new blynk_2['default']('alfaandfriends.tplinkdns.com', 9443);
+// var blynk_1 = new blynk_2['default']('192.168.1.183', 9443);
 
 /* Route (url) */
 app.get('/login/:email/:password', function(req, res) {
