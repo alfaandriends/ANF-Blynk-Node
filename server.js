@@ -11,6 +11,7 @@ app.get('/login/:email/:password', function(req, res) {
     blynk_1.connect();
     let login = blynk_1.login(req.params.email, req.params.password);
     login.then(function(result) {
+        res.setHeader('Access-Control-Allow-Origin', '*');
         res.send(result + "");
     }).catch(function(){
     })
@@ -20,6 +21,7 @@ app.get('/register/:email/:password', function(req, res) {
     blynk_1.connect();
     let register = blynk_1.register(req.params.email, req.params.password);
     register.then(function(result) {
+        res.setHeader('Access-Control-Allow-Origin', '*');
         res.send(result + "");
     }).catch(function(){
     })
@@ -28,6 +30,7 @@ app.get('/register/:email/:password', function(req, res) {
 app.get('/profile', function(req, res) {
     let profile = blynk_1.loadProfileGzipped();
     profile.then(function(result) {
+        res.setHeader('Access-Control-Allow-Origin', '*');
         res.send(result);
     }).catch(function(){
     })
@@ -35,6 +38,7 @@ app.get('/profile', function(req, res) {
 
 app.get('/logout', function(req, res){
     blynk_1.disconnect();
+    res.setHeader('Access-Control-Allow-Origin', '*');
     res.send("success");
 })
 
@@ -42,6 +46,7 @@ app.get('/logout', function(req, res){
 app.get('/createDash/:dashId/:dashName', function(req, res) {
     let createDashboard = blynk_1.createDash(req.params.dashId, req.params.dashName);
     createDashboard.then(function(result) {
+        res.setHeader('Access-Control-Allow-Origin', '*');
         res.send(result + "");
     }).catch(function(){
     })
@@ -50,6 +55,7 @@ app.get('/createDash/:dashId/:dashName', function(req, res) {
 app.get('/activateDash/:dashId', function(req, res) {
     let activateDash = blynk_1.activateDash(req.params.dashId);
     activateDash.then(function(result) {
+        res.setHeader('Access-Control-Allow-Origin', '*');
         res.send(result + "");
     }).catch(function(){
     })
@@ -58,6 +64,7 @@ app.get('/activateDash/:dashId', function(req, res) {
 app.get('/deactivateDash/:dashId', function(req, res) {
     let deactivateDash = blynk_1.deactivateDash(req.params.dashId);
     deactivateDash.then(function(result) {
+        res.setHeader('Access-Control-Allow-Origin', '*');
         res.send(result + "");
     }).catch(function(){
     })
@@ -67,6 +74,7 @@ app.get('/deactivateDash/:dashId', function(req, res) {
 app.get('/hardware/:dashIdAndTargetId/:ops/:gpio/:value', function(req, res) {
     let hardware = blynk_1.hardware(req.params.dashIdAndTargetId, req.params.ops, req.params.gpio, req.params.value);
     hardware.then(function(result) {
+        res.setHeader('Access-Control-Allow-Origin', '*');
         res.send(result);
     }).catch(function(){
     })
